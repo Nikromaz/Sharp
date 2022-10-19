@@ -1,12 +1,7 @@
 ﻿// Задача 34: Задайте массив заполненный случайными положительными 
 //трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
 
-//Брал за основу Задача 31.
-//Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9]. 
-//Найдите сумму отрицательных и положительных элементов массива.
-
-int[] GetArray(int size, int minValue, int maxValue) //Функция создания массива
+int[] GetArray(int size, int minValue, int maxValue) //Функция создания массива (взял из задачи 31)
 {
     int[] res = new int[size];
     for (int i = 0; i < size; i++)
@@ -15,11 +10,25 @@ int[] GetArray(int size, int minValue, int maxValue) //Функция созда
     }
     return res;
 }
-int PrintArray(int[] mass) //Функция вывода массива
+int IsEven(int[] array)//функция проверки элементов массива на четность
 {
-
+    int EvenNumbers = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
+        {
+            EvenNumbers++;
+        }
+    }
+    return EvenNumbers;
 }
 Console.Clear();
-int[] array = GetArray(4, 111, 999);
-Console.WriteLine(String.Join(", ", array));
-Console.WriteLine(PrintArray);
+Console.WriteLine("Для того, чтобы создать массив,");
+Console.WriteLine("введите количество элементов в массиве: ");
+int N = int.Parse(Console.ReadLine()!);
+int[] array = GetArray(N, 100, 999);
+Console.Write($"Сгенерированный массив, трехзначных чисел из {N} элементов: [");
+Console.Write(String.Join(", ", array));
+Console.Write("]");
+Console.WriteLine();
+Console.WriteLine($"В данном массиве {IsEven(array)} четных числа.");
