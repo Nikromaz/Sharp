@@ -27,8 +27,6 @@ int PositiveNumberCount(int[] massive)//Функция подсчета поло
 Console.Clear();
 Console.WriteLine("Введите числа через пробел: ");
 string input = Console.ReadLine()!;
-int[] numArray = GetArrayFromString(input); //Ввод переменной массива с присвоением значения
-// из функции создания массива из строки ввода
-int count = PositiveNumberCount(numArray); // Ввод переменной счетчика с присвоением значения
-// функции подсчета положительных чисел 
+int[] numArray = GetArrayFromString(input);
+int count = PositiveNumberCount(numArray);
 Console.WriteLine($"Количество чисел больше нуля в массиве: {count}");
