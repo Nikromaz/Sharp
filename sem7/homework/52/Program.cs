@@ -32,15 +32,15 @@ void PrintArray(int[,] inArray)
 
 void GetAverageOfColumns(int[,] massive)
 {
-    int[] summ = new int[massive.GetLength(0)];
+    int[] sum = new int[massive.GetLength(0)];
     for (int i = 0; i < massive.GetLength(0); i++)
     {
         for (int j = 0; j < massive.GetLength(1); j++)
         {            
-            summ[i] += massive[j, i];
+            sum[i] += massive[j, i];
         }
     }
-    foreach (double el in summ)
+    foreach (double el in sum)
     {
         Console.WriteLine(el / massive.GetLength(1));
     }
