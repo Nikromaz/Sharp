@@ -47,8 +47,10 @@ void GetAverageOfColumns(int[,] massive)
 }
 
 Console.Clear();
-int row = new Random().Next(3, 6);
-int columns = new Random().Next(3, 6);
+Console.Write("Введите количество строк в массиве: ");
+int row = int.Parse(Console.ReadLine()!);
+Console.Write("Введите количество столбцов в массиве: ");
+int columns = int.Parse(Console.ReadLine()!);
 int[,] array = GetArray(row, columns, 0, 10);
 
 PrintArray(array);
