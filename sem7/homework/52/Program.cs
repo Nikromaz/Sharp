@@ -40,9 +40,9 @@ void GetAverageOfColumns(int[,] massive)
             summ[i] += massive[j, i];
         }
     }
-    foreach (double elem in summ)
+    foreach (double el in summ)
     {
-        Console.WriteLine(elem / massive.GetLength(1));
+        Console.WriteLine(el / massive.GetLength(1));
     }
 }
 
