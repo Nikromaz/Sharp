@@ -37,7 +37,7 @@ void FindinNumberMatch(int[,] massive, int number)
         {
             if (massive[i, j] == number)
             {
-                Console.WriteLine($"Индекс найденного элемента:[{i + 1};{j + 1}]");
+                Console.WriteLine($"Индекс найденного элемента:[{i};{j}]");
                 return;
             }
         }
