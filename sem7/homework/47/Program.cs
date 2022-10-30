@@ -10,8 +10,9 @@ double[,] GetArray(int m, int n)
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
         {
-            result[i, j] = new Random().NextDouble() * 100;
-        }    
+            result[i, j] = Convert.ToDouble(new Random().Next(-10000, 10000)/100.0); 
+            //new Random().NextDouble() * 100 Вещественные числа от0 до 100
+        }
     return result;
 }
 
@@ -21,7 +22,7 @@ void PrintArray(double[,] inArray)
     {
         for (int j = 0; j < inArray.GetLength(1); j++)
         {
-            Console.Write("{0,6:F2}", inArray[i,j]);
+            Console.Write($"{inArray[i, j]}\t ");
         }
         Console.WriteLine();
     }
