@@ -6,7 +6,7 @@
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+int[,] GetArray(int m, int n, int minValue, int maxValue)//функция создания двумерного массива
 {
     int[,] result = new int[m, n];
     for (int i = 0; i < m; i++)
@@ -17,7 +17,7 @@ int[,] GetArray(int m, int n, int minValue, int maxValue)
     return result;
 }
 
-void PrintArray(int[,] inArray)
+void PrintArray(int[,] inArray)//функция вывода массива на печать
 {
     for (int i = 0; i < inArray.GetLength(0); i++)
     {
@@ -29,7 +29,7 @@ void PrintArray(int[,] inArray)
     }
 }
 
-void FindinNumberMatch(int[,] massive, int number)
+void FindingNumberMatch(int[,] massive, int number)//функция поиска числа в массиве
 {
     for (int i = 0; i < massive.GetLength(0); i++)
     {
@@ -56,4 +56,4 @@ int inputNumber = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine();
 PrintArray(array);
-FindinNumberMatch(array, inputNumber);
+FindingNumberMatch(array, inputNumber);
