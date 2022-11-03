@@ -5,7 +5,7 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+int[,] GetArray(int m, int n, int minValue, int maxValue) //функция создания двумерного массива
 {
     int[,] result = new int[m, n];
 
@@ -18,7 +18,7 @@ int[,] GetArray(int m, int n, int minValue, int maxValue)
     return result;
 }
 
-void PrintArray(int[,] inArray)
+void PrintArray(int[,] inArray)//функция вывода массива на печать
 {
     for (int i = 0; i < inArray.GetLength(0); i++)
     {
@@ -30,28 +30,24 @@ void PrintArray(int[,] inArray)
     }
 }
 
-void GetAverageOfColumns(int[,] massive)
+void GetAverageOfColumns(int[,] massive)//функция нахождения среднего арифметического в столбцах массива
 {
-    int[] sum = new int[massive.GetLength(0)];
-    for (int i = 0; i < massive.GetLength(0); i++)
+    double[] arrayOfColumns = new double[massive.GetLength(1)];
+    for (int j = 0; j < massive.GetLength(1); j++)
     {
-        for (int j = 0; j < massive.GetLength(1); j++)
-        {            
-            sum[i] += massive[j, i];
+        double sum = 0;
+        for (int i = 0; i < massive.GetLength(0); i++)
+        {
+            sum += massive[i, j];
         }
+        arrayOfColumns[j] = Math.Round(sum / massive.GetLength(0), 2);
     }
-    foreach (double el in sum)
-    {
-        Console.WriteLine(el / massive.GetLength(1));
-    }
+    Console.WriteLine($"Среднее арифметическое каждого столбца: [{String.Join("; ", arrayOfColumns)}]");
 }
 
 Console.Clear();
-Console.Write("Введите количество строк в массиве: ");
-int row = int.Parse(Console.ReadLine()!);
-Console.Write("Введите количество столбцов в массиве: ");
-int columns = int.Parse(Console.ReadLine()!);
+int row = new Random().Next(2, 6);
+int columns = new Random().Next(2, 6);
 int[,] array = GetArray(row, columns, 0, 10);
-
 PrintArray(array);
 GetAverageOfColumns(array);
